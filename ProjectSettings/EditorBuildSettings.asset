@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Resources/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 0
-    path: Assets/Scenes/XrPlayerDev.unity
+    path: Assets/Resources/Scenes/XrPlayerDev.unity
     guid: 03de4611911e4d84f9df551cfb0a1d62
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: b5175cf33ba520c48872524c8aebc9b1, type: 3}

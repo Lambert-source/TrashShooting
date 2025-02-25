@@ -1,7 +1,7 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Scenes;
+using MyGameNamespace;
 
 public class Trash_Can_Judge : MonoBehaviour
 {
@@ -15,82 +15,112 @@ public class Trash_Can_Judge : MonoBehaviour
         // Check if the colliding object is tagged as "GreenBin"
         //Debug.Log("Collided with: " + other.gameObject.name);
         //BlueBin
-        if (other.gameObject.CompareTag("can"))
+        ////////Bottles
+        if (other.gameObject.CompareTag("metal"))
         {
-            GameManager.Instance.count= GameManager.Instance.count + 10;
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count + 30;
+        }
+
+        else if (other.gameObject.CompareTag("paper"))
+        {
+
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count + 20;
         }
         else if (other.gameObject.CompareTag("plastic"))
         {
-            
-            GameManager.Instance.count = GameManager.Instance.count + 10;
-        }
-        else if (other.gameObject.CompareTag("paper"))
-        {
-            
-            GameManager.Instance.count = GameManager.Instance.count + 20;
+
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count + 10;
         }
         else if (other.gameObject.CompareTag("glass"))
         {
-        
-            GameManager.Instance.count = GameManager.Instance.count + 20;
+
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count + 20;
+        }
+        else if (other.gameObject.CompareTag("pepsi"))
+        {
+
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count + 50;
+        }
+        else if (other.gameObject.CompareTag("sprite"))
+        {
+
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count + 60;
+        }
+        ////////Bottles
+        ///
+        else if (other.gameObject.CompareTag("plastic"))
+        {
+
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count + 10;
+
+        }
+        else if (other.gameObject.CompareTag("paper"))
+        {
+
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count + 20;
+        }
+        else if (other.gameObject.CompareTag("glass"))
+        {
+
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count + 20;
         }
         else if (other.gameObject.CompareTag("metal"))
         {
-            GameManager.Instance.count = GameManager.Instance.count + 30;
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count + 30;
         }
 
         //RedBin
         else if (other.gameObject.CompareTag("paint"))
         {
-            GameManager.Instance.count = GameManager.Instance.count - 10;
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count - 10;
         }
         else if (other.gameObject.CompareTag("Fluorecent_Tube"))
         {
 
-            GameManager.Instance.count = GameManager.Instance.count - 10;
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count - 10;
         }
         else if (other.gameObject.CompareTag("Chemical_Residue"))
         {
 
-            GameManager.Instance.count = GameManager.Instance.count - 20;
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count - 20;
         }
         else if (other.gameObject.CompareTag("Light_Bulbs"))
         {
 
-            GameManager.Instance.count = GameManager.Instance.count - 20;
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count - 20;
         }
         else if (other.gameObject.CompareTag("Battery"))
         {
-            GameManager.Instance.count = GameManager.Instance.count - 30;
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count - 30;
         }
 
         //GreenBin
         else if (other.gameObject.CompareTag("Leftover_Fruit"))
         {
-            GameManager.Instance.count = GameManager.Instance.count - 10;
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count - 10;
         }
         else if (other.gameObject.CompareTag("Leftover_Food"))
         {
 
-            GameManager.Instance.count = GameManager.Instance.count - 10;
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count - 10;
         }
         else if (other.gameObject.CompareTag("Leftover_Vegetable"))
         {
 
-            GameManager.Instance.count = GameManager.Instance.count - 20;
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count - 20;
         }
         else if (other.gameObject.CompareTag("Leaf"))
         {
 
-            GameManager.Instance.count = GameManager.Instance.count - 20;
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count - 20;
         }
         else if (other.gameObject.CompareTag("Bone"))
         {
-            GameManager.Instance.count = GameManager.Instance.count - 30;
+            TrashJudgeManager.Instance.count = TrashJudgeManager.Instance.count - 30;
         }
         
         Destroy(other.gameObject); // Destroy the trash
-        Debug.Log("SCORE : " + GameManager.Instance.count);
+        Debug.Log("SCORE : " + TrashJudgeManager.Instance.count);
     }
 
 }
